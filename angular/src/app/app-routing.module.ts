@@ -3,9 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { RegisterComponent } from './public/register/register.component';
 import { LoginComponent } from './public/login/login.component';
 import { IndexComponent } from './shared/index/index.component';
-import { InvoiceDetailsComponent } from './invoice-details/invoice-details.component';
-import { InvoiceCreateComponent } from './invoice-create/invoice-create.component';
-import { InvoiceListComponent } from './invoice-list/invoice-list.component';
+import { InvoiceDetailsComponent } from './invoice/invoice-details/invoice-details.component';
+import { InvoiceCreateComponent } from './invoice/invoice-create/invoice-create.component';
+import { InvoiceListComponent } from './invoice/invoice-list/invoice-list.component';
+import { InvoiceAdminComponent } from './invoice/invoice-admin/invoice-admin.component';
+import { ServiceListComponent } from './service/service-list/service-list.component';
 
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },
@@ -13,6 +15,8 @@ const routes: Routes = [
   { path: 'invoices/create', component: InvoiceCreateComponent },
   { path: 'invoices/:id/details', component: InvoiceDetailsComponent },
   { path: 'invoices', component: InvoiceListComponent },
+  { path: 'invoices/admin', component: InvoiceAdminComponent },
+  { path: 'services', component: ServiceListComponent },
   { path: '', component: IndexComponent }
 ];
 

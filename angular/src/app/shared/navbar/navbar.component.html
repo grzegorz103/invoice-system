@@ -19,7 +19,12 @@
       
         <li class="nav-item">
           <a *ngIf="userService?.isAuthenticated() && userService?.hasAdminRole()" class="nav-link"
-            routerLink="invoices">Nowa usługa</a>
+            routerLink="invoices/admin">Faktury</a>
+        </li>
+
+        <li class="nav-item">
+          <a *ngIf="userService?.isAuthenticated() && userService?.hasAdminRole()" class="nav-link"
+            routerLink="services">Usługi</a>
         </li>
 
         <li class="nav-item">
