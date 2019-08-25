@@ -8,6 +8,7 @@ import { InvoiceCreateComponent } from './invoice/invoice-create/invoice-create.
 import { InvoiceListComponent } from './invoice/invoice-list/invoice-list.component';
 import { InvoiceAdminComponent } from './invoice/invoice-admin/invoice-admin.component';
 import { ServiceListComponent } from './service/service-list/service-list.component';
+import { ServiceCreateComponent } from './service/service-create/service-create.component';
 
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'invoices', component: InvoiceListComponent },
   { path: 'invoices/admin', component: InvoiceAdminComponent },
   { path: 'services', component: ServiceListComponent },
+  { path: 'services/create', component: ServiceCreateComponent},
   { path: '', component: IndexComponent }
 ];
 
