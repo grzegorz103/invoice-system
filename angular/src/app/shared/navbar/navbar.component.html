@@ -16,13 +16,15 @@
           <a *ngIf="userService?.isAuthenticated() && !userService?.hasAdminRole()" class="nav-link"
             routerLink="invoices/create">Nowa faktura</a>
         </li>
-        <li class="nav-item active">
-          <a *ngIf="userService?.isAuthenticated() && !userService?.hasAdminRole()" class="nav-link"
-            routerLink="visits/my">Tylko dla zwyklego usera<span class="sr-only">(current)</span></a>
-        </li>
+      
         <li class="nav-item">
           <a *ngIf="userService?.isAuthenticated() && userService?.hasAdminRole()" class="nav-link"
-            routerLink="visits/new/form">Tylko dla admina</a>
+            routerLink="invoices">Nowa usługa</a>
+        </li>
+
+        <li class="nav-item">
+          <a *ngIf="userService?.isAuthenticated() && userService?.hasAdminRole()" class="nav-link"
+            routerLink="services/create">Nowa usługa</a>
         </li>
 
       </ul>

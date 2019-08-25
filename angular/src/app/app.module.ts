@@ -14,6 +14,9 @@ import { HttpRequestInterceptor } from './security/request-interceptor';
 import { InvoiceListComponent } from './invoice-list/invoice-list.component';
 import { InvoiceDetailsComponent } from './invoice-details/invoice-details.component';
 import { InvoiceCreateComponent } from './invoice-create/invoice-create.component';
+import { ServiceListComponent } from './service-list/service-list.component';
+import { ServiceCreateComponent } from './service-create/service-create.component';
+import { InvoiceAdminComponent } from './invoice-admin/invoice-admin.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { InvoiceCreateComponent } from './invoice-create/invoice-create.componen
     FooterComponent,
     InvoiceListComponent,
     InvoiceDetailsComponent,
-    InvoiceCreateComponent
+    InvoiceCreateComponent,
+    ServiceListComponent,
+    ServiceCreateComponent,
+    InvoiceAdminComponent
   ],
   imports: [
     BrowserModule,
