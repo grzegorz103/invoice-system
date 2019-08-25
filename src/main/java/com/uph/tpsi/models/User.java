@@ -37,6 +37,6 @@ public class User
         private Set<UserRole> userRoles;
 
         @OneToMany(mappedBy = "user")
-        private List<User> invoices;
+        private Set<Invoice> invoices;
 
 }
