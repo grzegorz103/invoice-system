@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.time.Instant;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -34,5 +35,8 @@ public class User
                 joinColumns = @JoinColumn (name = "user_id"),
                 inverseJoinColumns = @JoinColumn (name = "role_id"))
         private Set<UserRole> userRoles;
+
+        @OneToMany(mappedBy = "user")
+        private List<User> invoices
 
 }

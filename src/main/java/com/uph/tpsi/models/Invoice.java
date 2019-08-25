@@ -18,6 +18,8 @@ public class Invoice
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
 
-        private List<User> users;
+        @ManyToOne
+        @JoinColumn(name="user_id")
+        private User user;
 
 }
