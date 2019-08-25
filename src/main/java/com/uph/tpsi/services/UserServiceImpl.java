@@ -1,11 +1,11 @@
 package com.uph.tpsi.services;
 
 
-import com.ii.uph.tpsi.models.User;
-import com.ii.uph.tpsi.models.UserType;
-import com.ii.uph.tpsi.repositories.UserRepository;
-import com.ii.uph.tpsi.repositories.UserRoleRepository;
-import com.ii.uph.tpsi.services.interfaces.UserService;
+import com.uph.tpsi.models.User;
+import com.uph.tpsi.models.UserType;
+import com.uph.tpsi.repositories.UserRepository;
+import com.uph.tpsi.repositories.UserRoleRepository;
+import com.uph.tpsi.services.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;

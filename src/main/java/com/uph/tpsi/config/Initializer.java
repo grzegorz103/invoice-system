@@ -1,11 +1,10 @@
 package com.uph.tpsi.config;
 
-
-import com.ii.uph.tpsi.models.User;
-import com.ii.uph.tpsi.models.UserRole;
-import com.ii.uph.tpsi.models.UserType;
-import com.ii.uph.tpsi.repositories.UserRepository;
-import com.ii.uph.tpsi.repositories.UserRoleRepository;
+import com.uph.tpsi.models.User;
+import com.uph.tpsi.models.UserRole;
+import com.uph.tpsi.models.UserType;
+import com.uph.tpsi.repositories.UserRepository;
+import com.uph.tpsi.repositories.UserRoleRepository;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

@@ -1,7 +1,7 @@
 package com.uph.tpsi.controllers;
 
-import com.ii.uph.tpsi.models.User;
-import com.ii.uph.tpsi.services.interfaces.UserService;
+import com.uph.tpsi.models.User;
+import com.uph.tpsi.services.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
