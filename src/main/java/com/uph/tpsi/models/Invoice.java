@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table
+@Table(name="invoices")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -31,5 +31,9 @@ public class Invoice
                 joinColumns = @JoinColumn (name = "invoice_id"),
                 inverseJoinColumns = @JoinColumn (name = "service_id"))
         private Set<Service> services;
+
+        @ManyToOne
+        @JoinColumn(name="invoice_status_id")
+        private InvoiceStatus invoiceStatus;
 
 }

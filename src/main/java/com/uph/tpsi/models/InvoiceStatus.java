@@ -8,20 +8,23 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table (name = "services")
+@Table (name = "invoice_types")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Service
+public class InvoiceStatus
 {
         @Id
         @GeneratedValue (strategy = GenerationType.IDENTITY)
         private Long id;
 
-        @Column (name = "name")
-        private String name;
+        @Enumerated (EnumType.STRING)
+        private InvoiceType invoiceType;
 
-        @Column (name = "price")
-        private float price;
+        public enum InvoiceType
+        {
+                AWAITING,
+                PAID
+        }
 }
