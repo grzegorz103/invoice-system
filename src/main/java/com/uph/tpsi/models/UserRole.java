@@ -19,6 +19,4 @@ public class UserRole
 
         @Enumerated (EnumType.STRING)
         private UserType userType;
-
-
 }
