@@ -1,1 +1,23 @@
-<p>invoice-admin works!</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Klient</th>
+            <th scope="col">Usługi</th>
+            <th scope="col">Kwota</th>
+            <th scope="col">Status</th>
+            <th scope="col">Akcja</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let invoice of invoices; let i = index">
+            <th scope="row">{{invoice.id}}</th>
+            <td>{{invoice.user.username}}</td>
+            <td><p *ngFor="let service of invoice.services">{{service.name}}</p>
+            </td>
+            <td> {{invoice.totalPrice}}</td>
+            <td>{{invoice.invoiceStatus.invoiceType == 'AWAITING' ? 'Oczekująca' : 'Zapłacona'}}</td>
+            <td><button class="btn btn-success" (click)="changeStatus(i)">Zmień</button></td>
+        </tr>
+    </tbody>
+</table>
