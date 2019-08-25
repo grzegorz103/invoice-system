@@ -32,4 +32,8 @@ public class Invoice
                 inverseJoinColumns = @JoinColumn (name = "service_id"))
         private Set<Service> services;
 
+        @ManyToOne
+        @JoinColumn(name="invoice_status_id")
+        private InvoiceStatus invoiceStatus;
+
 }

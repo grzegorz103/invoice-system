@@ -1,8 +1,8 @@
 package com.uph.tpsi.config;
 
-import com.uph.tpsi.models.User;
-import com.uph.tpsi.models.UserRole;
-import com.uph.tpsi.models.UserType;
+import com.uph.tpsi.models.*;
+import com.uph.tpsi.repositories.InvoiceStatusRepository;
+import com.uph.tpsi.repositories.ServiceRepository;
 import com.uph.tpsi.repositories.UserRepository;
 import com.uph.tpsi.repositories.UserRoleRepository;
 import org.springframework.beans.factory.InitializingBean;
@@ -21,16 +21,23 @@ public class Initializer
 
         private final UserRepository userRepository;
 
+        private final ServiceRepository serviceRepository;
+
+        @Autowired
+        private InvoiceStatusRepository invoiceStatusRepository;
+
         private final PasswordEncoder encoder;
 
         @Autowired
         public Initializer ( UserRoleRepository userRoleRepository,
                              UserRepository userRepository,
-                             PasswordEncoder encoder )
+                             PasswordEncoder encoder,
+                             ServiceRepository serviceRepository )
         {
                 this.userRoleRepository = userRoleRepository;
                 this.userRepository = userRepository;
                 this.encoder = encoder;
+                this.serviceRepository = serviceRepository;
         }
 
         @Bean
@@ -62,6 +69,21 @@ public class Initializer
                                                 .userRoles( new HashSet<>( Collections.singletonList( userRoleRepository.findByUserType( UserType.ROLE_USER ) ) ) )
                                                 .build()
                                 );
+                        }
+
+                        if ( invoiceStatusRepository.findAll().isEmpty() )
+                        {
+                                invoiceStatusRepository.save( InvoiceStatus.builder().invoiceType( InvoiceStatus.InvoiceType.AWAITING ).build() );
+                                invoiceStatusRepository.save( InvoiceStatus.builder().invoiceType( InvoiceStatus.InvoiceType.PAID ).build() );
+                        }
+
+                        if ( serviceRepository.findAll().isEmpty() )
+                        {
+                                serviceRepository.save( Service.builder().name( "Ocieplenie ścian" ).price( 1500f ).build() );
+                                serviceRepository.save( Service.builder().name( "Malowanie" ).price( 500f ).build() );
+                                serviceRepository.save( Service.builder().name( "Tynkowanie" ).price( 2000f ).build() );
+                                serviceRepository.save( Service.builder().name( "Montaż instalacji elektrycznej" ).price( 1500f ).build() );
+                                serviceRepository.save( Service.builder().name( "Murowanie" ).price( 3500f ).build() );
                         }
 
                 };
