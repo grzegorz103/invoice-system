@@ -11,12 +11,12 @@ import { UserService } from './services/user.service';
 import { IndexComponent } from './shared/index/index.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HttpRequestInterceptor } from './security/request-interceptor';
-import { InvoiceListComponent } from './invoice-list/invoice-list.component';
-import { InvoiceDetailsComponent } from './invoice-details/invoice-details.component';
-import { InvoiceCreateComponent } from './invoice-create/invoice-create.component';
-import { ServiceListComponent } from './service-list/service-list.component';
-import { ServiceCreateComponent } from './service-create/service-create.component';
-import { InvoiceAdminComponent } from './invoice-admin/invoice-admin.component';
+import { InvoiceListComponent } from './invoice/invoice-list/invoice-list.component';
+import { InvoiceDetailsComponent } from './invoice/invoice-details/invoice-details.component';
+import { InvoiceCreateComponent } from './invoice/invoice-create/invoice-create.component';
+import { ServiceListComponent } from './service/service-list/service-list.component';
+import { ServiceCreateComponent } from './service/service-create/service-create.component';
+import { InvoiceAdminComponent } from './invoice/invoice-admin/invoice-admin.component';
 
 @NgModule({
   declarations: [

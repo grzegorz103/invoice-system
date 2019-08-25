@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InvoiceService } from 'src/app/services/invoice.service';
+import { Invoice } from 'src/app/models/invoice';
 
 @Component({
   selector: 'app-invoice-admin',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvoiceAdminComponent implements OnInit {
 
-  constructor() { }
+  invoices: Invoice[];
 
-  ngOnInit() {
+  constructor(private invoiceService: InvoiceService) { 
   }
 
+  ngOnInit() {
+    this.invoiceService.findAll().subscribe(res=>this.invoices=res);
+  }
+
+  changeStatus(index: number){
+    this.invoiceService.updateStatus(this.invoices[index].id).subscribe(res=>this.ngOnInit());
+  }
 }
