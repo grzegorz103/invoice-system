@@ -37,6 +37,7 @@ public class User
         private Set<UserRole> userRoles;
 
         @OneToMany(mappedBy = "user")
+        @JsonIgnore
         private Set<Invoice> invoices;
 
 }

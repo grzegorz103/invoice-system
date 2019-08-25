@@ -1,0 +1,35 @@
+<div class="container">
+    <h2 class="my-2">Tworzenie nowej faktury</h2>
+    <div *ngIf="invoice.services.length > 0">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nazwa</th>
+                    <th scope="col">Koszt</th>
+                    <th scope="col">Usuń</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let service of invoice.services; let i = index">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ service.name }}</td>
+                    <td>{{ service.price }}</td>
+                    <td><button class="btn btn-danger" (click)="removeServiceFromInvoice(i)">Usuń</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <hr />
+        Łączna kwota: {{ invoice.totalPrice }}zł
+    </div>
+    <div class="card my-5">
+        <div class="card-body">
+            <label for="selects">Wybierz usługę</label>
+            <select class="form-control col-md-4" [(ngModel)]="selectedService" id="selects">
+                <option *ngFor="let service of services" [ngValue]="service">{{service.name}}</option>
+            </select>
+            <button class="btn btn-warning mt-3" (click)="addServiceToInvoice()">Dodaj</button>
+        </div>
+    </div>
+    <button class="btn btn-success mt-3" (click)="save()">Wyślij</button>
+</div>

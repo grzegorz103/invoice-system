@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="card my-5">
+      <div class="card-body">
+        <form (ngSubmit)="create()" #userForm="ngForm">
+          <h2>Dodawanie nowej usługi</h2>
+          <div class="form-group">
+            <label for="name">Nazwa usługi</label>
+            <input type="text" [(ngModel)]="service.name" minlength="5" class="form-control" id="name" name="name"
+              required #name="ngModel">
+          </div>
+  
+          <div class="form-group">
+            <label for="text">Koszt</label>
+            <input type="text" [(ngModel)]="service.price" min="1" class="form-control" id="price"
+              name="text" required #name="ngModel">
+          </div>
+  
+          <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-info">Dodaj</button>
+  
+        </form>
+      </div>
+    </div>
+  </div>

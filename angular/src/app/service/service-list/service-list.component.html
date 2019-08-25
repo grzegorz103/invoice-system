@@ -1,0 +1,23 @@
+<div class="container">
+    <div *ngIf="services?.length > 0">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let service of services">
+                    <th scope="row">{{ service.id }}</th>
+                    <td>{{ service.name}}</td>
+                    <td>{{ service.price}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="services?.length === 0">
+        Brak usług
+    </div>
+</div>
